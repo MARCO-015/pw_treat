@@ -169,9 +169,8 @@ async def account_login(bot: Client, m: Message):
                         url = re.search(r"(https://.*?playlist.m3u8.*?)\"", text).group(1)
 
             if '/master.mpd' in url and not '/drm/' in url:
-                id = url.split("/")[-2]
                 pwtoken = os.getenv('pwtoken')
-                url = f'https://madxapi-d0cbf6ac738c.herokuapp.com/{id}/master.m3u8?token={pwtoken}'
+                url = f'https://anonymouspwplayer-b99f57957198.herokuapp.com/pw?url={url}?token={pwtoken}'
                 print(url)
 
             elif 'cpvod.testbook' in url:
